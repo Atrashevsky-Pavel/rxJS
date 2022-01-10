@@ -1,0 +1,12 @@
+<div class="header">
+  <div class="header__buttons">
+    <div>
+      <button (click)="switchModal()" class="btn btn-success" [disabled] = "timer">Add City</button>
+      <button (click)="startWeatherObservable()" class="btn btn-danger" [disabled]="timer">start weather</button>
+    </div>
+    <div>
+      <button (click) = "startWeather()" [disabled]="timer" class="btn btn-primary">start weather</button>
+      <button (click)="endWeather()" [disabled] = "!timer" class="btn btn-primary">end weather</button>
+    </div>
+  </div>
+</div>

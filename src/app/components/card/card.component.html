@@ -1,0 +1,21 @@
+<div class="city">
+  <div class="city__title">
+    <p>{{card.id + 1}}:</p> <p>{{card.city}}</p>
+  </div>
+  <div class="city__weather">
+   <p>t</p><p>{{card.weather?.temp | temp}} C</p>
+  </div>
+  <div class="city__weather">
+    <p>weather:</p>
+    <i [class]="classWeather" aria-hidden="true"></i>
+  </div>
+  <div class="city__weather">
+    <p>wind</p>
+    {{card.weather?.wind_speed | wind}} m/s
+  </div>
+  <div class="city__delete" *ngIf="!timer">
+    <div class="city__delete-icon" (click)="deleteCity(card.id)">
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>

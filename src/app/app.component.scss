@@ -1,0 +1,33 @@
+.content {
+  position: fixed;
+  top: 80px;
+  left: 0%;
+  bottom: 80px;
+  width: 100%;
+  height: calc(100% - 160px);
+  background-color: #cbd0ff;
+  overflow-y: auto;
+  @media  (max-width: 768px) {
+    top: 125px;
+    height: calc(100% - 205px);
+  }
+}
+.footer {
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &__year {
+    color: white;
+    padding-right: 1.5rem;
+    margin-bottom: 0rem;
+  }
+  &__clear {
+    margin-right: 1.5rem;
+  }
+}

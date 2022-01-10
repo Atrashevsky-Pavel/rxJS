@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  &__window {
+    position: relative;
+    width: 24rem;
+    height: 8rem;
+    margin-top: 6rem;
+    background-color: #d1d1d1;
+    &-header {
+      display: flex;
+      justify-content: flex-end;
+      >i {
+        margin: .45rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+    &-form {
+      padding: 0rem .85rem;
+      display: flex;
+      justify-content: space-between;
+      &-city {
+        position: relative;
+        width: 100%;
+        >input {
+          width: 95%;
+          box-sizing: border-box;
+          height: 2rem;
+          border-radius: 3px;
+        }
+        &-autocomplete {
+          position: absolute;
+          top: 2.2rem;
+          padding: .5rem;
+          z-index: 10;
+          width: 100%;
+          max-height: 15rem;
+          background-color: white;
+          overflow-y: auto;
+          &-option {
+            cursor: pointer;
+          }
+          &-active {
+            background-color: blue;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,7 +1,21 @@
-<app-part1></app-part1>
-<app-part2></app-part2>
-<app-part3></app-part3>
-<app-part4></app-part4>
-<app-part5></app-part5>
-<app-part6></app-part6>
-<app-part7></app-part7>
+<app-header
+  (showModal)="showModalChange($event)"
+  (weatherStream)="weatherStream($event)"
+  (weatherStreamObservable)="weatherStreamObservable($event)"
+></app-header>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <app-card class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor = "let item of cities | async"
+                [card] = "item"
+      >
+      </app-card>
+    </div>
+  </div>
+</div>
+<app-modal *ngIf = showModal (showModal)="showModalChange($event)"></app-modal>
+<div class="footer">
+  <button (click)="clearStorage()" class="btn btn-success footer__clear" >Clear Storage</button>
+  <p class="footer__year">{{yearOfDevelopment | year}}</p>
+</div>
+

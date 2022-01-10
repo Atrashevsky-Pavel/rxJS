@@ -1,0 +1,32 @@
+<div class="modal" id="modal" (click)="switchModal($event)">
+  <div class="modal__window">
+    <div class="modal__window-header">
+        <i
+          class="fa fa-times"
+          aria-hidden="true"
+          (click) = "closeModal()"
+        ></i>
+    </div>
+    <div class="modal__window-form">
+      <div class="modal__window-form-city">
+        <input type="text" #cityInput>
+        <div
+          *ngIf="showAutocomplete && cityInputRef.nativeElement.value.length > 2"
+          class="modal__window-form-city-autocomplete"
+        >
+          <div
+            *ngFor="let item of citiesOption"
+            class="modal__window-form-city-autocomplete-option"
+            [class.modal__window-form-city-autocomplete-active]="item.active"
+            (click)="chooseCityOption(item.city)"
+          >
+            {{item.city}}
+          </div>
+        </div>
+      </div>
+      <button (click)="saveCity()" [disabled]="saveDisabled">
+        Save
+      </button>
+    </div>
+  </div>
+</div>
